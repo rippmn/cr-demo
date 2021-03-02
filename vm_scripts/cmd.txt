@@ -1,0 +1,24 @@
+sudo yum install java-11-openjdk-devel -y
+sudo useradd -r tomcat
+sudo mkdir /usr/local/tomcat9
+cd /usr/local/tomcat9/
+sudo curl -o tomcat9.tar.gz https://apache.claz.org/tomcat/tomcat-9/v9.0.43/bin/apache-tomcat-9.0.43.tar.gz
+sudo tar -xvf tomcat9.tar.gz 
+sudo mv apache-tomcat-9.0.43/* . 
+sudo rm -rf apache-tomcat-9.0.43/
+sudo rm tomcat9.tar.gz 
+sudo chown -R tomcat:tomcat /usr/local/tomcat9/
+echo "export CATALINA_HOME="/usr/local/tomcat9"" >> ~/.bashrc 
+source ~/.bashrc 
+sudo touch /etc/systemd/system/tomcat.service
+##determine how to put the tomcat.service file
+sudo vi /etc/systemd/system/tomcat.service 
+sudo systemctl daemon-reload
+sudo systemctl start tomcat.service
+sudo systemctl enable tomcat.service
+##INSTALL THE WORKSHOP WAR
+##FIRST REMOVE THE TOMCAT WEBAPPS
+sudo rm -rf /usr/local/tomcat9/webapps/*
+##MAYALSO NEED TO ATTACH TO CLOUD SQL via env vars
+sudo systemctl restart tomcat.service
+##WE ARE G2G
