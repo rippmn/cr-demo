@@ -35,7 +35,7 @@ body {
   color: #4D4D4D;
   padding: 0;
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Google Sans, Arial, Helvetica, sans-serif;
   font-weight: normal;
   font-style: normal;
   line-height: 1;
@@ -1702,14 +1702,14 @@ meta.foundation-mq-topbar {
         .top-bar-section ul li .js-generated {
           display: none; }
     .top-bar-section li.hover > a:not(.button) {
-      background: #272727;
+      background: #DB4437;
       color: white; }
     .top-bar-section li a:not(.button) {
       padding: 0 15px;
       line-height: 45px;
       background: #4285F4; }
       .top-bar-section li a:not(.button):hover {
-        background: #272727; }
+        background: #DB4437; }
     .top-bar-section .has-dropdown > a {
       padding-right: 35px !important; }
       .top-bar-section .has-dropdown > a:after {
